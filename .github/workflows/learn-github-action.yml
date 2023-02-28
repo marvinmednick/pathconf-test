@@ -2,8 +2,11 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-    check-bats-version:
-      runs-on: [macos-latest, ubuntu-latest]
+    check-macos:
+      strategy:
+        matrix:
+          os: [ubuntu-latest, windows-latest]
+      runs-on:  ${{ matrix.os }}
       steps:
         - uses: actions/checkout@v3
         - uses: actions/setup-node@v3
