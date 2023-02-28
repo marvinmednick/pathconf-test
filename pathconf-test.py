@@ -6,7 +6,7 @@ import sys
 print(f"Platform is {sys.platform}")
 
 print("Pathconf_names results:")
-for key, value in os.pathconf_names.items():
+for key, value in sorted(os.pathconf_names.items(), key=lambda f: f[1]):
     print(f" {key} :  {value}")
     
 
