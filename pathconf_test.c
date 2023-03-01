@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
+#include <stdlib.h>
 
 void main()
 {
@@ -17,4 +18,5 @@ void main()
         }
         printf("\n");
     }
+    exit(0);
 }
