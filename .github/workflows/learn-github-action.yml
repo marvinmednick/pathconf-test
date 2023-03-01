@@ -9,11 +9,13 @@ jobs:
       runs-on:  ${{ matrix.os }}
       steps:
         - uses: actions/checkout@v3
+        - name: Build C check
+          run:  gcc pathconf_test.c  -o pathconf_test_c
+        - name: List files
+          run:  ls
+        - name: Run C check
+          run:  pathconf_test_c
         - name: Run Rust check
           run: cargo run
         - name: Run Python check
           run: python3 pathconf-test.py
-        - name: Build C check
-          run:  gcc pathconf_test.c  -o pathconf_test_c
-        - name: Run C check
-          run:  pathconf_test_c
