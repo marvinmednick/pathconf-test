@@ -4,3 +4,5 @@ wip
 *.swp
 *.log
 *.un~
+ci/
+pathconf_test_c
